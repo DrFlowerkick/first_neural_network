@@ -1,0 +1,207 @@
+    Checking rusty_neural_net v0.1.0 (/home/marc/Development/repos/first_neural_network/rusty_neural_net)
+warning: unused import: `linfa::prelude::*`
+ --> src/mnist.rs:7:5
+  |
+7 | use linfa::prelude::*;
+  |     ^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:53:49
+    |
+53  | pub fn load_mnist_dataset(path: &str) -> Result<DatasetBase<Array2<f64>, Array1<usize>>> {
+    |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:54:16
+    |
+54  |     let file = File::open(path).context("Failed to open CSV file")?;
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:63:22
+    |
+63  |         let record = result.context("Error reading CSV row")?;
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:64:28
+    |
+64  |         let label: usize = record[0].parse().context("Invalid label")?;
+    |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:68:29
+    |
+68  |             let pixel: u8 = val.parse().context("Invalid pixel")?;
+    |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:76:26
+    |
+76  |     let x: Array2<f64> = Array2::from_shape_vec((n_samples, 784), features)?;
+    |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:79:8
+    |
+79  |     Ok(DatasetBase::<Array2<f64>, Array1<usize>>::new(x, y))
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0599]: the function or associated item `new` exists for struct `DatasetBase<ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>, ...>`, but its trait bounds were not satisfied
+    --> src/mnist.rs:79:51
+     |
+79   |     Ok(DatasetBase::<Array2<f64>, Array1<usize>>::new(x, y))
+     |                                                   ^^^ function or associated item cannot be called due to unsatisfied trait bounds
+     |
+    ::: /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ndarray-0.16.1/src/lib.rs:1280:1
+     |
+1280 | pub struct ArrayBase<S, D>
+     | -------------------------- doesn't satisfy `_: Records`
+     |
+     = note: the following trait bounds were not satisfied:
+             `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:79:5
+    |
+79  |     Ok(DatasetBase::<Array2<f64>, Array1<usize>>::new(x, y))
+    |     ^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+error[E0277]: the trait bound `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>: Records` is not satisfied
+   --> src/mnist.rs:79:5
+    |
+79  |     Ok(DatasetBase::<Array2<f64>, Array1<usize>>::new(x, y))
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Records` is not implemented for `ArrayBase<OwnedRepr<f64>, Dim<[usize; 2]>>`
+    |
+    = help: the following other types implement trait `Records`:
+              &R
+              ()
+              DatasetBase<D, T>
+              ndarray::ArrayBase<S, I>
+note: required by a bound in `DatasetBase`
+   --> /home/marc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linfa-0.7.1/src/dataset/mod.rs:177:8
+    |
+175 | pub struct DatasetBase<R, T>
+    |            ----------- required by a bound in this struct
+176 | where
+177 |     R: Records,
+    |        ^^^^^^^ required by this bound in `DatasetBase`
+
+Some errors have detailed explanations: E0277, E0599.
+For more information about an error, try `rustc --explain E0277`.
+warning: `rusty_neural_net` (lib) generated 1 warning
+error: could not compile `rusty_neural_net` (lib) due to 10 previous errors; 1 warning emitted

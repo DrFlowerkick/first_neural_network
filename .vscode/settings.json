@@ -4,9 +4,13 @@
         "argmax",
         "cmap",
         "figsize",
+        "linfa",
         "mapv",
         "mnist",
+        "multiclass",
         "ndarray",
+        "nfeatures",
+        "nsamples",
         "ylim",
         "yticks"
     ]
