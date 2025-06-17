@@ -1,8 +1,12 @@
 {
     "jupyter.jupyterServerType": "local",
     "cSpell.words": [
+        "argmax",
         "cmap",
         "figsize",
+        "mapv",
+        "mnist",
+        "ndarray",
         "ylim",
         "yticks"
     ]
