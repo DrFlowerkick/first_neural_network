@@ -1,6 +1,9 @@
 {
     "jupyter.jupyterServerType": "local",
     "cSpell.words": [
-        "cmap"
+        "cmap",
+        "figsize",
+        "ylim",
+        "yticks"
     ]
 }
